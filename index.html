@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎂 Happy Birthday Beautiful! 🎉</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: auto;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: linear-gradient(45deg, 
+        #ff9a9e 0%, 
+        #fecfef 25%, 
+        #fecfef 50%, 
+        #a8edea 75%, 
+        #fed6e3 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+      background-attachment: fixed;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Intro page styles */
+    #introOverlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      text-align: center;
+      z-index: 100000;
+      font-family: cursive;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    /* Animated background for intro */
+    .intro-sparkles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .intro-sparkle {
+      position: absolute;
+      font-size: 2rem;
+      animation: introSparkleFloat 4s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes introSparkleFloat {
+      0% {
+        transform: translateY(100vh) rotate(0deg) scale(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.7;
+        transform: translateY(90vh) rotate(45deg) scale(1);
+      }
+      90% {
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg) scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* Floating hearts for intro */
+    .intro-heart {
+      position: absolute;
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.6);
+      animation: introHeartFloat 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes introHeartFloat {
+      0%, 100% { 
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.6;
+      }
+      50% { 
+        transform: translateY(-30px) rotate(180deg) scale(1.2);
+        opacity: 1;
+      }
+    }
+
+    /* Pulsing birthday cake */
+    .intro-cake {
+      position: absolute;
+      font-size: 4rem;
+      animation: introCakePulse 2s ease-in-out infinite;
+    }
+
+    @keyframes introCakePulse {
+      0%, 100% { 
+        transform: scale(1) rotate(0deg);
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+      }
+      50% { 
+        transform: scale(1.2) rotate(10deg);
+        filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6));
+      }
+    }
+
+    /* Enhanced intro text */
+    .intro-title {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      animation: introTitleGlow 2s ease-in-out infinite alternate;
+      z-index: 10;
+      position: relative;
+    }
+
+    @keyframes introTitleGlow {
+      0% { 
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px rgba(255, 107, 157, 0.3);
+      }
+      100% { 
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 107, 157, 0.6);
+      }
+    }
+
+    .intro-message {
+      font-size: 1.3rem;
+      max-width: 650px;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      z-index: 10;
+      position: relative;
+      animation: introMessageSlide 1s ease-out 0.5s both;
+    }
+
+    @keyframes introMessageSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Enhanced continue button */
+    .continue-button {
+      background: linear-gradient(45deg, #ff6b9d, #feca57, #48dbfb, #ff9ff3);
+      background-size: 300% 300%;
+      border: none;
+      padding: 20px 40px;
+      font-size: 1.4rem;
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      font-family: cursive;
+      transition: all 0.3s ease;
+      animation: continueButtonGlow 3s ease infinite, continueButtonBounce 1s ease-out 1s both;
+      z-index: 10;
+      position: relative;
+    }
+
+    @keyframes continueButtonGlow {
+      0%, 100% { 
+        background-position: 0% 50%;
+        transform: scale(1);
+      }
+      50% { 
+        background-position: 100% 50%;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes continueButtonBounce {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.5);
+      }
+      60% {
+        transform: translateY(-10px) scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .continue-button:hover {
+      transform: scale(1.1) rotateZ(2deg);
+      box-shadow: 0 20px 45px rgba(255, 107, 157, 0.4);
+    }
+
+    .continue-button:active {
+      transform: scale(0.95);
+    }
+
+    /* Main page content - initially hidden */
+    .main-content {
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .main-content.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Animated sparkles background */
+    .sparkle-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 1.5rem;
+      animation: sparkleFloat 6s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes sparkleFloat {
+      0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1) rotate(180deg); }
+    }
+
+    /* Enhanced big heart with glow */
+    .big-heart {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: 1000px;
+      background-image: url('D:/Kalai/Birthday Wish/overlapping-outline-hearts.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.6;
+      z-index: 1;
+      pointer-events: none;
+      animation: heartbeat 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 30px rgba(255, 107, 157, 0.5));
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.05); }
+    }
+
+    /* Enhanced confetti with different shapes */
+    #confetti-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      animation: confetti-fall 4s linear infinite;
+    }
+
+    .confetti-heart {
+      width: 10px;
+      height: 10px;
+      background: #ff6b6b;
+      transform: rotate(-45deg);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    }
+
+    .confetti-star {
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 8px solid #feca57;
+      transform: rotate(35deg);
+    }
+
+    .confetti-circle {
+      border-radius: 50%;
+      background: #48dbfb;
+    }
+
+    @keyframes confetti-fall {
+      0% { 
+        transform: translateY(-100vh) rotate(0deg); 
+        opacity: 1; 
+      }
+      100% { 
+        transform: translateY(100vh) rotate(720deg); 
+        opacity: 0; 
+      }
+    }
+
+    /* Enhanced balloons with strings */
+    #balloons-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .balloon-group {
+      position: absolute;
+      animation: float-balloon 8s ease-in-out infinite;
+    }
+
+    .balloon {
+      font-size: 2.5rem;
+      filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+    }
+
+    .balloon-string {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, #333, transparent);
+      margin: 0 auto;
+      opacity: 0.6;
+    }
+
+    @keyframes float-balloon {
+      0%, 100% { transform: translateY(0px) translateX(0px) rotate(-2deg); }
+      25% { transform: translateY(-30px) translateX(15px) rotate(2deg); }
+      50% { transform: translateY(-60px) translateX(-15px) rotate(-2deg); }
+      75% { transform: translateY(-30px) translateX(8px) rotate(1deg); }
+    }
+
+/* Enhanced video section */
+.video-layer {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 2rem;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.video-container {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  animation: videoFadeIn 4s ease-in-out forwards;
+  opacity: 0;
+  transform: scale(0.5) rotate(10deg);
+  max-width: 90%;
+  background: linear-gradient(45deg, #ff9a9e, #fecfef, #a8edea);
+  padding: 10px;
+}
+
+.video-container::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+  background-size: 400% 400%;
+  border-radius: 30px;
+  z-index: -1;
+  animation: borderGlow 3s ease infinite;
+}
+
+.birthday-video {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  background: #000;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+@keyframes videoFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(10deg);
+    filter: blur(10px);
+  }
+  50% {
+    filter: blur(2px);
+    transform: scale(0.8) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0px);
+  }
+}
+
+.video-container {
+  max-width: 95%;
+  margin: 0 10px;
+}
+
+.birthday-video {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  max-height: 550px;
+}
+
+.video-layer {
+  padding: 20px 1rem;
+}
+
+    /* Floating heart photos */
+    .floating-heart-photo {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      z-index: 1500;
+      pointer-events: none;
+      animation: floatHeartPhoto 15s linear infinite;
+    }
+
+    .heart-photo-shape {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      clip-path: path('M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5 C2,5.42,4.42,3,7.5,3c1.74,0,3.41,0.81,4.5,2.09C13.09,3.81,14.76,3,16.5,3 C19.58,3,22,5.42,22,8.5c0,3.78-3.4,6.86-8.55,11.54L12,21.35z');
+      transform: scale(2.5);
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+    }
+
+    @keyframes floatHeartPhoto {
+      0% {
+        transform: translateX(-100px) translateY(100vh) rotate(0deg) scale(0.5);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+        transform: translateX(-50px) translateY(90vh) rotate(45deg) scale(1);
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(100vw) translateY(-100px) rotate(360deg) scale(0.3);
+        opacity: 0;
+      }
+    }
+
+    /* Music notes */
+    .music-note {
+      position: fixed;
+      font-size: 2rem;
+      color: #ff6b9d;
+      z-index: 1200;
+      pointer-events: none;
+      animation: musicFloat 4s ease-out forwards;
+    }
+
+    @keyframes musicFloat {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-300px) scale(0.3);
+        opacity: 0;
+      }
+    }
+
+    /* Fireworks */
+    .firework {
+      position: fixed;
+      z-index: 1100;
+      pointer-events: none;
+    }
+
+    .firework-particle {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      position: absolute;
+      animation: fireworkExplode 2s ease-out forwards;
+    }
+
+    @keyframes fireworkExplode {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Cake floating */
+    .floating-cake {
+      position: fixed;
+      font-size: 3rem;
+      z-index: 1300;
+      pointer-events: none;
+      animation: cakeFloat 10s ease-in-out infinite;
+    }
+
+    @keyframes cakeFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      25% {
+        transform: translateY(-30px) rotate(5deg);
+      }
+      50% {
+        transform: translateY(-60px) rotate(0deg);
+      }
+      75% {
+        transform: translateY(-30px) rotate(-5deg);
+      }
+    }
+
+    /* Party mode effects */
+    .party-mode {
+      animation: partyColors 0.5s infinite;
+    }
+
+    @keyframes partyColors {
+      0% { filter: hue-rotate(0deg) brightness(1); }
+      25% { filter: hue-rotate(90deg) brightness(1.2); }
+      50% { filter: hue-rotate(180deg) brightness(1); }
+      75% { filter: hue-rotate(270deg) brightness(1.2); }
+      100% { filter: hue-rotate(360deg) brightness(1); }
+    }
+
+    p {
+      font-family: cursive;
+      font-size: 14mm;
+      color: rgb(0, 0, 0);
+      z-index: 10000000001;
+    }
+
+    p1 {
+      font-family: cursive;
+      font-size: 5mm;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      display: block;
+      max-width: 100%;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .wish {
+      text-align: center;
+
+      padding: 50px 20px;
+      margin-top: 20px;
+      z-index: 1000;
+      position: relative;
+    }
+
+    .wish p{
+      font-family: 'Times New Roman', Times, serif;
+      line-height: 1.5;
+      font-size: 12mm;
+      color: rgb(0, 0, 0);
+      z-index: 10000000001;      
+    }
+    /* Surprise section styles */
+    .surprise-section {
+      position: relative;
+      z-index: 1000;
+      text-align: center;
+      padding: 80px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      margin: 100px 20px 50px 20px;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideUp 1s ease-out 3s forwards;
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .surprise-button {
+      background: linear-gradient(45deg, #ff6b9d, #feca57, #48dbfb);
+      background-size: 300% 300%;
+      border: none;
+      padding: 20px 40px;
+      font-size: 1.5rem;
+      font-family: cursive;
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+      transition: all 0.3s ease;
+      animation: buttonGlow 3s ease infinite;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      font-weight: bold;
+    }
+
+    @keyframes buttonGlow {
+      0%, 100% { background-position: 0% 50%; transform: scale(1); }
+      50% { background-position: 100% 50%; transform: scale(1.05); }
+    }
+
+    .surprise-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+    }
+
+    .surprise-button:active {
+      transform: scale(0.95);
+    }
+
+    /* Gift boxes container */
+    .gifts-container {
+      display: none;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+      padding: 40px;
+      opacity: 0;
+      animation: fadeInGifts 1s ease-out forwards;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @keyframes fadeInGifts {
+      to { opacity: 1; }
+    }
+
+    .gift-box {
+      width: 120px;
+      height: 120px;
+      /* margin-left: 30px; */
+      background: linear-gradient(45deg, #ff9a9e, #fecfef);
+      border-radius: 15px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: giftFloat 3s ease-in-out infinite;
+      /* overflow: auto; */
+    }
+
+    .gift-box:nth-child(2) { animation-delay: 0.5s; }
+    .gift-box:nth-child(3) { animation-delay: 1s; }
+    /* .gift-box:nth-child(4) { animation-delay: 1.5s; }
+    .gift-box:nth-child(5) { animation-delay: 2s; } */
+    .gift-box:nth-child(6) { animation-delay: 2.5s; }
+
+    @keyframes giftFloat {
+      0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+      50% { transform: translateY(-10px) rotateZ(2deg); }
+    }
+
+    .gift-box:hover {
+      transform: scale(1.1) rotateZ(5deg);
+      box-shadow: 0 15px 35px rgba(255, 107, 157, 0.4);
+    }
+
+    .gift-box::before {
+      content: '🎁';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+      transition: all 0.3s ease;
+    }
+
+    .gift-box:hover::before {
+      font-size: 3.5rem;
+      transform: translate(-50%, -50%) rotateZ(-5deg);
+    }
+
+    .gift-box::after {
+      content: attr(data-number);
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 30px;
+      height: 30px;
+      background: #ff6b9d;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: bold;
+      box-shadow: 0 3px 10px rgba(255, 107, 157, 0.5);
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 2000;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #ff9a9e, #fecfef, #a8edea);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 500px;
+    max-height: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: modalPop 0.5s ease-out;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+    @keyframes modalPop {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3) rotateZ(180deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotateZ(0deg);
+      }
+    }
+
+    .modal-emoji {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      display: block;
+      animation: emojiDance 1s ease-in-out infinite;
+    }
+
+    @keyframes emojiDance {
+      0%, 100% { transform: scale(1) rotateZ(0deg); }
+      50% { transform: scale(1.2) rotateZ(10deg); }
+    }
+
+    .modal-title {
+      font-family: cursive;
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .modal-message {
+  font-family: cursive;
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Custom scrollbar for modal */
+.modal-message::-webkit-scrollbar {
+  width: 8px;
+}
+
+    .modal-message::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.modal-message::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ff6b9d, #feca57);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.modal-message::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #ff9ff3, #48dbfb);
+}
+
+/* For Firefox */
+.modal-message {
+  scrollbar-width: thin;
+  scrollbar-color: #ff6b9d rgba(255, 255, 255, 0.2);
+}
+
+/* Close button - fixed to bottom */
+.close-modal {
+  background: linear-gradient(45deg, #ff6b9d, #feca57);
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  font-family: cursive;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+  transition: all 0.3s ease;
+  font-weight: bold;
+  margin-top: auto;
+  align-self: center;
+}
+
+    .close-modal:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 107, 157, 0.5);
+    }
+
+    /* Intro page fade out */
+    .intro-fade-out {
+      animation: introFadeOut 1s ease-out forwards;
+    }
+
+    @keyframes introFadeOut {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1.1);
+      }
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .big-heart {
+        width: 500px;
+        height: 500px;
+      }
+      
+      .photo-slot {
+        width: 150px !important;
+        height: 200px !important;
+      }
+      
+      .left-photo, .extra-photo-2 {
+        height: 300px !important;
+      }
+      
+      .birthday-message {
+        padding: 30px;
+        margin: 20px;
+      }
+
+      .intro-title {
+        font-size: 2.2rem;
+      }
+
+      .intro-message {
+        font-size: 1.1rem;
+      }
+
+      .gifts-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .image-layer {
+        padding: 20px 1rem;
+      }
+
+      .wish {
+        padding: 30px 15px;
+      }
+
+      p {
+        font-size: 15mm;
+      }
+
+      p1 {
+        font-size: 5mm;
+      }
+    }
+
+    /* Image and Wish Section */
+.image-wish-section {
+  position: relative;
+  z-index: 1000;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.birthday-image-container {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  animation: imageAppear 2s ease-out;
+}
+
+.birthday-image {
+  max-width: 1000px;
+  width: 90%;
+  height: auto;
+  /* border-radius: 20px; */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  /* border: 4px solid rgba(255, 255, 255, 0.8); */
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 10px 30px rgba(255, 107, 157, 0.3));
+}
+
+.birthday-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(255, 107, 157, 0.4);
+}
+
+@keyframes imageAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Animated Typing Wish */
+.animated-wish-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.typing-wish {
+  font-family: cursive;
+  font-size: 1.4rem;
+  color: #333;
+  line-height: 1.8;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  min-height: 2em;
+}
+
+.cursor {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: #ff6b9d;
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Responsive design for image section */
+@media (max-width: 768px) {
+  .birthday-image {
+    max-width: 300px;
+  }
+  
+  .typing-wish {
+    font-size: 1.2rem;
+  }
+  
+  .animated-wish-container {
+    padding: 20px;
+  }
+}
+
+/* Photo selection modal styles */
+.photo-selection-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.photo-option {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #ff6b9d, #feca57);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+  position: relative;
+}
+
+.photo-option:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 107, 157, 0.5);
+}
+
+.photo-option.clicked {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.photo-option::before {
+  content: '💖';
+  font-size: 2rem;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+}
+
+.photo-option.clicked::before {
+  content: '✓';
+  color: #666;
+}
+
+.photo-selection-title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: cursive;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Photo display modal */
+.photo-display-modal .modal-content {
+  max-width: 50%;
+  max-height: 120%;
+}
+
+.photo-display-image {
+  max-width: 400px;
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+  </style>
+</head>
+<body>
+
+  <div id="introOverlay">
+    <!-- Animated background elements -->
+    <div class="intro-sparkles" id="introSparkles"></div>
+    
+    <!-- Floating hearts -->
+    <div class="intro-heart" style="top: 10%; left: 15%;">💖</div>
+    <div class="intro-heart" style="top: 20%; right: 20%; animation-delay: 1s;">💝</div>
+    <div class="intro-heart" style="bottom: 30%; left: 10%; animation-delay: 2s;">💕</div>
+    <div class="intro-heart" style="bottom: 15%; right: 15%; animation-delay: 3s;">💗</div>
+    <div class="intro-heart" style="top: 60%; left: 80%; animation-delay: 1.5s;">❤️</div>
+    <div class="intro-heart" style="top: 40%; left: 5%; animation-delay: 2.5s;">💙</div>
+    
+    <!-- Pulsing cake -->
+    <div class="intro-cake" style="top: 15%; left: 50%; transform: translateX(-50%);">🎂</div>
+    <div class="intro-cake" style="bottom: 20%; right: 10%; animation-delay: 1s; font-size: 2rem;">🧁</div>
+    <div class="intro-cake" style="bottom: 25%; left: 8%; animation-delay: 2s; font-size: 2.5rem;">🍰</div>
+    
+    <!-- Main content -->
+    <h2 class="intro-title">
+      Heyyy Girl🎉  
+    </h2>
+    <p class="intro-message">
+      A Very Happy Birthday to you My Dear Friend Kalaiarasiiii 💖🫂  
+      <br>It's my special gift for you on this birthday 🎁  
+      <br>So, shall we start this birthday celebration? 🎂✨
+    </p>
+    <button class="continue-button" onclick="startCelebration()">
+      Start ---> 🎶
+    </button>
+  </div>
+
+  <div class="main-content" id="mainContent">
+    <audio id="bgMusic" loop volume="0.5">
+      <source src="Jessy's Land.m4a" type="audio/mp4">
+      <!-- Your browser does not support the audio element. -->
+    </audio>
+
+    <!-- Sparkle background -->
+    <div class="sparkle-bg" id="sparkle-bg"></div>
+
+    <!-- Enhanced big heart -->
+    <div class="big-heart"></div>
+
+    <!-- Confetti and balloons containers -->
+    <div id="confetti-container"></div>
+    <div id="balloons-container"></div>
+
+    <!-- Floating heart photos container -->
+    <div id="floating-hearts"></div>
+
+    <!-- Music notes container -->
+    <div id="music-notes"></div>
+
+    <!-- Floating cakes -->
+    <div id="floating-cakes"></div>
+
+    <div class="wish" style="align-items: center;">
+      <p>Wish you very very Happy Birthday 🎂 Kalaiarasiii 😍💝... On your '22nd My wish will be like this 👇</p>
+    </div>
+    <!-- <p1> Ennala mudinja oru chinna gift for my Special Friend </p1> -->
+    
+    <!-- Image and Wish Section -->
+<div class="image-wish-section">
+  <div class="birthday-image-container">
+    <img src="Pics/Picture1.png" alt="Birthday Image" class="birthday-image" id="birthdayImage">
+  </div>
+  
+  <div class="animated-wish-container">
+    <p class="typing-wish" id="typingWish"></p>
+    <!-- <div class="cursor" id="cursor"></div> -->
+  </div>
+</div>
+
+    <!-- Surprise section -->
+    <div class="surprise-section">
+      <button class="surprise-button" onclick="revealGifts()">
+        ✨ Shall we start something surprise? ✨
+      </button>
+      
+      <div class="gifts-container" id="giftsContainer">
+        <div class="gift-box" data-number="1" onclick="openGift(1)"></div>
+        <div class="gift-box" data-number="2" onclick="openGift(2)"></div>
+        <div class="gift-box" data-number="3" onclick="openGift(3)"></div>
+        <!-- <div class="gift-box" data-number="4" onclick="openGift(4)"></div>
+        <div class="gift-box" data-number="5" onclick="openGift(5)"></div> -->
+        <div class="gift-box" data-number="4" onclick="openGift(6)"></div>
+      </div>
+    </div>
+
+    <!-- Gift modals -->
+    <div id="giftModal" class="modal">
+      <div class="modal-content">
+        <span class="modal-emoji" id="modalEmoji"></span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-message" id="modalMessage"></p>
+        <button class="close-modal" onclick="closeModal()">Thank you! 💕</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let celebrationActive = false;
+    let animationIntervals = [];
+
+    // Create animated sparkles for intro page
+    function createIntroSparkles() {
+      const sparkleEmojis = ['✨', '⭐', '🌟', '💫', '🎆', '🎇', '💎', '🔥'];
+      const container = document.getElementById('introSparkles');
+      
+      for (let i = 0; i < 15; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'intro-sparkle';
+        sparkle.innerHTML = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.animationDelay = Math.random() * 4 + 's';
+        sparkle.style.animationDuration = (Math.random() * 2 + 3) + 's';
+        
+        container.appendChild(sparkle);
+        
+        setTimeout(() => {
+          if (sparkle.parentNode) sparkle.remove();
+        }, 6000);
+      }
+    }
+
+    // Initialize intro animations
+    function initIntroAnimations() {
+      // Create initial sparkles
+      createIntroSparkles();
+      
+      // Continue creating sparkles
+      const introSparkleInterval = setInterval(() => {
+        if (document.getElementById('introOverlay').style.display !== 'none') {
+          createIntroSparkles();
+        } else {
+          clearInterval(introSparkleInterval);
+        }
+      }, 2000);
+    }
+
+    // Enhanced confetti with different shapes
+    function createEnhancedConfetti() {
+      if (!celebrationActive) return;
+      
+      const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#5f27cd', '#ff6b9d'];
+      const shapes = ['confetti-circle', 'confetti-heart', 'confetti-star'];
+      
+      for (let i = 0; i < 3; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = `confetti ${shapes[Math.floor(Math.random() * shapes.length)]}`;
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = '-10px';
+        
+        if (shapes[Math.floor(Math.random() * shapes.length)] === 'confetti-circle') {
+          confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+        
+        confetti.style.animationDelay = Math.random() * 2 + 's';
+        confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+        document.getElementById('confetti-container').appendChild(confetti);
+        
+        setTimeout(() => {
+          if (confetti.parentNode) confetti.remove();
+        }, 5000);
+      }
+    }
+
+    // Enhanced balloons with strings
+    function createEnhancedBalloons() {
+      if (!celebrationActive) return;
+      
+      const balloons = ['🎈', '🎂', '🎉', '🎊', '🌟', '💖', '🎁', '🦄', '🌈', '✨'];
+      const balloonGroup = document.createElement('div');
+      balloonGroup.className = 'balloon-group';
+      
+      const balloon = document.createElement('div');
+      balloon.className = 'balloon';
+      balloon.innerHTML = balloons[Math.floor(Math.random() * balloons.length)];
+      
+      const string = document.createElement('div');
+      string.className = 'balloon-string';
+      
+      balloonGroup.appendChild(balloon);
+      balloonGroup.appendChild(string);
+      balloonGroup.style.left = Math.random() * 90 + '%';
+      balloonGroup.style.top = Math.random() * 70 + 10 + '%';
+      balloonGroup.style.animationDelay = Math.random() * 5 + 's';
+      
+      document.getElementById('balloons-container').appendChild(balloonGroup);
+      setTimeout(() => {
+        if (balloonGroup.parentNode) balloonGroup.remove();
+      }, 12000);
+    }
+
+    // Create sparkle background
+    function createSparkles() {
+      if (!celebrationActive) return;
+      
+      const sparkleEmojis = ['✨', '⭐', '🌟', '💫', '🎆', '🎇'];
+      
+      for (let i = 0; i < 20; i++) {
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.innerHTML = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+        sparkle.style.left = Math.random() * 100 + '%';
+        sparkle.style.top = Math.random() * 100 + '%';
+        sparkle.style.animationDelay = Math.random() * 6 + 's';
+        sparkle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        
+        document.getElementById('sparkle-bg').appendChild(sparkle);
+        
+        setTimeout(() => {
+          if (sparkle.parentNode) sparkle.remove();
+        }, 8000);
+      }
+    }
+
+    // Create music notes
+    function createMusicNotes() {
+      if (!celebrationActive) return;
+      
+      const notes = ['🎵', '🎶', '🎼', '♪', '♫', '♬'];
+      const note = document.createElement('div');
+      note.className = 'music-note';
+      note.innerHTML = notes[Math.floor(Math.random() * notes.length)];
+      note.style.left = Math.random() * 90 + 10 + '%';
+      note.style.bottom = '0px';
+      
+      document.getElementById('music-notes').appendChild(note);
+      
+      setTimeout(() => {
+        if (note.parentNode) note.remove();
+      }, 4000);
+    }
+
+    // Create floating cakes
+    function createFloatingCake() {
+      if (!celebrationActive) return;
+      
+      const cakes = ['🎂', '🧁', '🍰', '🎂', '🍭', '🍬'];
+      const cake = document.createElement('div');
+      cake.className = 'floating-cake';
+      cake.innerHTML = cakes[Math.floor(Math.random() * cakes.length)];
+      cake.style.right = Math.random() * 20 + '%';
+      cake.style.top = Math.random() * 60 + 20 + '%';
+      cake.style.animationDelay = Math.random() * 5 + 's';
+      
+      document.getElementById('floating-cakes').appendChild(cake);
+      
+      setTimeout(() => {
+        if (cake.parentNode) cake.remove();
+      }, 15000);
+    }
+
+    // Create fireworks
+    function createFireworks() {
+      if (!celebrationActive) return;
+      
+      const colors = ['#ff6b6b', '#feca57', '#48dbfb', '#ff9ff3', '#54a0ff', '#ff6b9d'];
+      const firework = document.createElement('div');
+      firework.className = 'firework';
+      firework.style.left = Math.random() * 80 + 10 + '%';
+      firework.style.top = Math.random() * 60 + 20 + '%';
+      
+      // Create particles
+      for (let i = 0; i < 12; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'firework-particle';
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        const angle = (i * 30) * Math.PI / 180;
+        const distance = Math.random() * 100 + 50;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+        
+        particle.style.setProperty('--x', x + 'px');
+        particle.style.setProperty('--y', y + 'px');
+        particle.style.animation = `fireworkExplode 2s ease-out forwards`;
+        particle.style.transform = `translate(${x}px, ${y}px)`;
+        
+        firework.appendChild(particle);
+      }
+      
+      document.body.appendChild(firework);
+      setTimeout(() => {
+        if (firework.parentNode) firework.remove();
+      }, 2000);
+    }
+
+    // Initialize intro page
+    document.addEventListener('DOMContentLoaded', function() {
+      initIntroAnimations();
+      
+      // Pre-configure audio volume
+      const bgMusic = document.getElementById('bgMusic');
+      if (bgMusic) {
+        bgMusic.volume = 0.5;
+        bgMusic.muted = false;
+        console.log("Audio volume initialized to:", bgMusic.volume);
+      }
+    });
+
+    // Start main celebration
+    function startCelebration() {
+      // Start music with 50% volume
+      const bgMusic = document.getElementById('bgMusic');
+      
+      // Set volume using multiple methods to ensure it works
+      // bgMusic.volume = 0.5; // Set volume to 50%
+      // bgMusic.setAttribute('volume', '0.5');
+      
+      // Wait a moment then play with volume check
+      setTimeout(() => {
+        bgMusic.volume = 0.5; // Double-check volume setting
+        bgMusic.play().then(() => {
+          console.log("Music started successfully at volume:", bgMusic.volume);
+        }).catch(err => {
+          console.log("Audio play failed:", err);
+          // Try alternative method if first fails
+          const playPromise = bgMusic.play();
+          if (playPromise !== undefined) {
+            playPromise.then(() => {
+              bgMusic.volume = 0.5;
+            });
+          }
+        });
+      }, 100);
+
+      // Add fade out animation to intro
+      const introOverlay = document.getElementById('introOverlay');
+      introOverlay.classList.add('intro-fade-out');
+      
+      setTimeout(() => {
+        // Hide intro and show main content
+        introOverlay.style.display = 'none';
+        const mainContent = document.getElementById('mainContent');
+        mainContent.classList.add('active');
+        
+        // Set celebration as active
+        celebrationActive = true;
+        
+        // Start all main page animations
+        animationIntervals.push(setInterval(createEnhancedConfetti, 1000));
+        animationIntervals.push(setInterval(createEnhancedBalloons, 1000));
+        animationIntervals.push(setInterval(createSparkles, 5000));
+        animationIntervals.push(setInterval(createMusicNotes, 5000));
+        animationIntervals.push(setInterval(createFloatingCake, 5000));
+        startTypingAnimation();
+      }, 1000);
+    }
+
+    // Click anywhere for mini celebration (only when main page is active)
+    document.addEventListener('click', function(e) {
+      if (celebrationActive && !e.target.closest('#giftModal')) {
+        createFireworks();
+        createMusicNotes();
+        
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => createEnhancedConfetti(), i * 50);
+        }
+      }
+    });
+
+    // Gift surprise functionality
+    const giftMessages = {
+      1: {
+        emoji: "🌟",
+        title: "Happpyyyyy Birthdayyy",
+        message: "Hii .... Happy Birthday Kalai 💕... The first special person in my world 🌍 Indha 10 years of bonding idhu vara yaarukittayum kidaikaadha andha anbu, happiness, nimmadhi ...  Inimelum innum evlo years aanalum It wants to be there .... Innum ethana decades aanalum ... I need to be the first person to wish you. <br> Un aasaigal un kanavugal anaithum niraivera ennal mudindha udhavigal en vaalnaal muluvadhum irukum. <br>Once again Happy birthday my girl 😘😍.<br> Innum meedhi iruka ellam paathutu va namma pesuvom 😂😁"
+      },
+      2: {
+        emoji: "💝",
+        title: "Unakaaga sedhuka patta kavidhaigal",
+        message: "தயக்கத்தோடு ஆர்மபிக்கும் முதல் உரையாடல் <br> பயத்தோடு பகிர்ந்துகொள்ளும் தொலைபேசி எண்கள் <br> தவறாக என்னிவிடுவாளோ என்று யோசித்து யோசித்து பேசும் தருணங்கள் <br> காதல் கீதல் என்று உளறிவிடுவானோ என்று குழப்பத்தோடு பேசும் ஆரம்பகாலங்கள் <br> புரிதல் தொடங்கும் நேரத்தில் தானாக மலர ஆரம்பிக்கும் நட்பு மலர் <br> புரிந்து கொண்டபின் ஆண் பெண் வித்தியாசத்தை காணாமல் ஆகும் நட்பின் ஆழம் <br><br> நாம் இருவரும் பேசி பழகிய இடங்கள் நீ இன்றி வெறுமையாக இருந்தாலும் <br> அவற்றை பாக்கும் போது எல்லாம் பசுமையாக தான் இருக்கின்றன <br> என் நெஞ்சில் இன்னும் அந்த நினைவுகள் <br><br> சில நேரங்களில் ஒரே ஒரு சந்திப்பும் கூட <br> வாழ்நாளும் முழுவதும் மறக்க முடியாத <br> நினைவுகளை பரிசாக தந்துவிட்டு செல்கின்றன <br><br> நீ என்னோடு பேசுகின்ற நேரம் குறைந்து போனாலும்<br> நான் உன்னை பற்றி மனதில் நினைக்காத நிமிடங்களே இல்லை<br><br> உறவு என்று பலர் வந்தாலும் <br> உனக்கான உணர்வுகள் ஒருபோதும் மாறாதே <br> கஷ்டத்தில் கண்துடைத்து <br> தோல்வியில் தோள்கொடுத்து <br> எந்நிலையிலும் விளகாத என் உயிர் <br> நீ ... !!! <br> கலை 💝😍💖"
+      },
+      3: {
+  emoji: "📸",
+  title: "Your Special Pictures",
+  message: "Click any heart to see your special pictures! 💖"
+},
+      4: {
+        emoji: "💖",
+        title: "You're Loved",
+        message: "You are surrounded by love and appreciation! Your kindness, compassion, and beautiful heart make you truly special. You mean so much to everyone around you! 💕"
+      },
+      5: {
+        emoji: "🎊",
+        title: "Birthday wish",
+        message: "Today is all about celebrating the amazing person you are! You deserve all the happiness, success, and beautiful moments life has to offer. Enjoy your special day! 🎉"
+      },
+      6: {
+        emoji: "⭐",
+        title: "Memories of 10 Yrs Bond 💖",
+        message: "Adhavadhu namma meet panna ellathayum oru memory aa vechikalaam nu dhaan indha maari yosichen ... 💌<br> Unakum evlo nybagam iruku nu sollu okk va <br> So first unna epdi meet panen nu nybagam illa ... But 8th standard la dhaan frst first pesa start pannom .. Namma schl la first floor la entrance ku opp la irka center cls 😁. <br> Anga dhaan frst frst naa 2nd row la utkaantu irukum bodhu unna paathadha nyabagam. Nee reeta ellam first row la irundhinga 👧👯‍♀️. Class shuffle panna apo anga irundhu inga vandhiya or inga dhaan irundhiya nu sathiyama nybagam illa...  unaku nybagam irundhaal sollu 😂<br> And apdiyae pesa start pannirupom first reeta ta dhaan pesirupen ava muliyaama dhaan unta pesuna nybagam. <br> Crct aa ?? <br> But namma close firends aa maarinadhu adhigam aa pesinadhu enaku thrnji at 9th ❤️. Room No 37 oo 38 oo . Entrance la irundhu left side la sec floor la steps erina second cls .... Namma cls 7th 9th 11th 12th ellam ae anga dhaan padichirupom <br> Andha cls la irukum bodhu naanu neenu reeta jana ellarum nalla frnds aa maarinadhu. <br> Aprm 10th ku apdiyae keela first floor sorna cls ku vandhurupom ... Adhu vara kalai ae eppodhum siricha mugam aa paathae palakam 🥹😢. <br> But andha cls la irukum bodhu dhaan kalai aludha 😿. Neeyum reeta um edho place change aana appo. Nyabagam irukum ninaikiran. <br> Adhuku aprm pinnadi nee um 4th oo 5th row oo vandhurupa. Nee jana abi suruthi ellam orae row la irundhadhu. <br> Apdiyae 10th public laam mudichi .... 11th la kaal vechom ... 💝 The Most MEMORABLE DAYS IN MY LIFE 💞❣️ <br> Bcoz andha 11th and 12th la dhaan Kalai ae rmba rmba pudika arambichidhu.💝 <br> 11th la dhaan namma rendu per adhigam aa time spend pannirupom ninaikiran 😍. <br> Rendu perum ae 9th la irundhe orae time la schl kulla enter aaguradhu .... or entrance la meet pandradhu ... Ippo ninaichaalum kannukullayae video aa azhaga iruku ..🥰😘<br> And namma rendu perum rmba neram pesunadhum continous aa 11th padikira apo dhaan thryum aa... <br> Enaiku na ... Sept 3 ninaikiran ... Sept 5 teachers day celebration kaaga paadhi cls training panna porom nu pona appo .... Naa nee jana moonu per ... Naa boys side sec row la utkaantu irundhen ... Neeyum jana um girls side sec row la utkaantu irundhinga ... Munnadi neenu unaku pinnadi jana un mela saanjikitu ... Appo dhaan namma rmba neram pesinom 😍💝... Andha day innum special enna na .. <br> After that day schl life mudira varaikum ... Kalai epo schl kulla vandhaalum frst vekkura good morning or hello or hii .... Oru kutttyyy smile oda andha face la ... Enta solluva ... 🥰💏💕 <br> Cls ulla enter aagum bodha irukatum ... Schl ulla enter aagum bodha irukatum ... Poi cls la utkaandhutu crct aa thirumbi oru hii ...😸❣️ <br> The Day begins with Happiness ❤️‍🔥💖<br>Ippo ninaicha kooda alaga iruku ... 🤩🤗<br> Apo la irundhu ipo vara ... inimelum adhu thodara vendum nu ketukuren. <br> And 11th public mudichom ... 12th la kandraaavi padhi naal corona naala naasam aa pochu 😔😭... Andha time la laam kalai kitta pesama ... Migavum kadinam. <br> Apo apo schl ku koopta apo laam kooda varum bodhu ... Andha same smile oda oru vanakam ...💝 <br> Adhellam mudinji schl life mudiyum bodhu ... irundha orae bayam adhu dhaan ... Jana ta pesiruken msg la , reeta ta pesiruken but kalai ta epdi ... Inime mudiyaadho nu oru feelings irundhuchu ... Adhuvae oru periya depression la irundhn apo laam.😭😭😭 <br> But after that un clg bus la oru naal unna paatha apo edharchi aa ... Pona avlo happiness um thirumba vandhuchu ... 😸❤️‍🔥<br> Ipovum nyabgam iruku nammaloda frst meet andha railway gate aanda ...🛤️🚆 <br> Infact adhuku aprm adhukaagave andha time la bus stand la irukanum nu laam clg la irundhu seekram aa kelambi .... 4.10 ku clg vita 4.20-4.30 kulla perungalathur varanum nu speed aa vandhu paatha naal laam um undu ...😅😂 <br> Andha maari oru naal dhaan nee naa jana meet pannadhu... Naa unna paathen aana jana va paakala anaiku .... Iva enna da nadu track la haiiii nu kai virichitu pora nu paathen ... paatha indha pakkam la irundhu jana pona .... Aprm neenga nadu track la katti pudichitu kadha pesitu vara appo ennaya paathu ... Namma moonu per oru pic eduthom 💖📷 <br> A very special pic ... Naa kalai oda irukura maari iruka orae pic adhu onu dhaan .... 💝💓 <br> But irundhaalum namma rendu per mattum iruka maari oru pic kooda ila ...😭😭Koodiya seekram onnaachu eduthupom aa ... Pleaseeee 🙏🙏 Eppoyaachu meet pannum bodhu .. 🙇‍♂️ <br> Aprm adhe maari daily andha time ku vandhu neraya naal paathuruken ... neraya naal paaka mudiyaama um poiruken 😂... Oru sila naal 3.30 ku laam clg vituta seekram inga vandhutu 15 20 mins laam wait pannadhum undu ... 😁<br> Just to see my girl ... Adhu ennamo thrla unta pesuna mattum dhaan enaku iruka elam prechanayum ae pona maari oru feel epdinae thrla ...😍😘 <br> Just paathalae oru positive vibes .. Vera yaarukittayum kidaichadhu illa .. Kidaika porardhum illa 💓<br> Adhe mari oru naal un placement dress potu irundha apo unna paatha apo ... Masss aa irundhuchu ... Nee kooda keta thryuma epdi iruku nu ... Blue shirt and black pant maari color aa ... correct aa ?? 😉😎 <br> Ipdiyae poitu irundhuchu ... Aprm adhukum oru end card varanum la nu ... Clg um end ku vandhuchu 😭... Last day of clg unna paathae aaganum nu 35 mins kitta wait panen ... motham 7-8 rounds railway station layae 😂.. ipovum maraka mudiyaadhadhu ... <br> Aana atlast paathuten😍 .... paathu andha oru 5 mins pesuradhu .... best times of my life.💖😻 <br> Adhuvum mudinja aprm epdi da ini paaka porom pesa porom nu irundhen ... <br> Adhuku aprm ippo vara meet um panala ...😭 <br> Just messaging la mattum ae pesitu irukom ... <br> But unfortunately poga poga adhuvum koraira maari oru naal feel vandhuchu thryum aa ...😭😭 <br> Frst maari pesa mudila ... naanum ava velaiku pora busy aa irupa so msg laam pandradhu kastam nu vituten .. 😔<br> But oru sila time msg pannitu reply varum aa nae waiting la irupen 😢.. Ippo recent aa laam kitta thata 4 5 days kalichi reply panniya .. Lite aa feel aayitu ....(recent means idhu type panna appo ... which is aug 10-15 kitta)😞 Naanum seri avalum busy aa irupa distrub panna vendam nu apdiyae vituren ... <br> Ena onnu idhellam moolai yosikidhu ... aana feelings vera dept la ... adhu lite aa feel pannudhu ..😂 <br> But enna irundhaalum namma kalai ae namma vitu kuduthura mudiyum aa ... Aval edho velai aa irundha .. pannama irukalaam ... So adhellam onum illa mooditu po da nu naa enake sollipen 😆🤩...<br> Nee eppo free aa irukiyo appo pesu da ... weekly once nalla pesuna kooda i will be more than happy .... but indha oru day ku oru msg maari pesurom aa ... Adhu ennamo rmba feel panna vekkudhu 😢... Idhu onnum enaku pudhusu illa nu vechikoyen ellarum max apdi dhan irukaanga ... avlo yen jana reeta ta laam kooda hmm okk haan nu moonu vaarthaiyae vechi kaalaila oru msg madhiyam oru msg nu pesiruken ... Aana adhe vishayam unta nu irukum bodhu ... Mind ethuka maatudhu 😭...  <br> Actually idhellam solla vendam nu dhaan irundhen ... But unta maraikavum thonala adhaan .... Feel laam pannadha ... perusa yosikavum seiyaadha ... Yen na naa oru loosu ... So hurt panni irundha sorrryyyyyyyyyyyy <br> Enna vena irukatum ... ippo indha current unemployment time la ... Naa sandhosham aa iruka kaaranum um nee dhaan thryum aa😂 ... Idha uruvaaka start pannadhu la irundhu 💌 ... seira apo fullah ... rmba nimmadhi aa irundhen 😍 ... <br> Ipo kooda indha website uruvaakuradhu kitta thatta un bday la irundhu  47 days munnadi start pannadhu 😂... First idha type panniralaam nu ipo inaiku utkaandhu typing (but idhuku aprm egappata editings iruku day by day neraya changes)... kitta thatta 48 naal viradham maari 47 naal porandha naal ku indha comedy gift ready panna 😆.. <br> And naalaiku adhavadhu aug 21 unaku advance bday wish for one month nu poduven ... <br> aprm onnu maranten andha qr code oru naal anupunen thryum aa adhu open panni scan panni paathiya ... enna vandhuchu nu ... 😂<br> And atlast idhellam namma indha 10yrs la nadandha oru small part 100 la 1 percent kooda irukaadhu ....... Innum egapatadhu mind la iruku ... But nee padichite poga mudiyaadhu ... so paadhi paadhi aa solliten ... 🤩😍<br>And andha photo dhaan actually unaku frame maari illa phone case maari gift aa tharalaam nu laam yosichen .... <br>But rendu vishayam ... Onnu mukiyam aa dhudu illa... panna en kaasula dhaan pannanum ... Irandu adha unta tharardhu ... rendum kastam 😂😂<br> And indha wish is my one of the most favorite <br> Yen na ... idhu vara idhellam pannadhe illa ... just oru line la ellarukum mudichiruven ... <br> And adhe maari indha time dhaan frst frst en life layae oruthar ku 12ku sharp aa wish panna poren. Adhuvum nee dhaan. <br> And avlo neram namma mulichi iruka maatom la ... adhanaala adhayum automate dhaan panlaam iruken ... <br> Whatsapp la mudiyaadha kaaranathinaal Mail la scheduled mail la potu vidren. <br> Inaiyoda ellam over indha editings... inaiku adhavadhu 9th september idhellam ae webiste aa upload panni ... un wish kum ellam ae ready panni vechidren. <br> Idha nee padikum bodhu already unaku wish pannirupen. 😂 <br> And innonnu fullah padichi mudichitu sollu, idhuku laam behind the scenes work kaatren adhula edhaachu nalla iruku na adhayum aprm aa idhula add pannikalaam😂. Oru silladhu uruvaakitu vendam nu oram katti vechiruken. <br> Inaiyoda naa ooruku poren .... So one week munnadiyae ellam ready pannitu ... Indha one week la bore adikum bodhu laam idha paathutu time pass panna poren 🤗💓<br> And 🫂 Once again Happy Birthday KALAIARASI 😘🥰<br> You are my First Important in this world, You will be ... Innum ethana varusham aanalum ... U r my first person ... ❤️‍🔥<br> Love u lotss ... 🥰<br> Unta solliruken aa thrla ... Enaku oru sila characters angels maari ... Rmba pudikum life la impprtant persons.... Adhula THE FIRST ANGEL IN MY LIFE 👼... Nee dhaan ... <br> And Atlast <br> Happy Birthdayy ❤️‍🔥😍 <br>Un mel irukum paasam, loves, bonds, ellam ae ... Apdiyae dhaan irukum lifelong 🫂<br> "
+      }
+    };
+
+    function revealGifts() {
+      if (!celebrationActive) return;
+
+      // const bgMusic = document.getElementById('bgMusic');
+      
+      // // Set volume using multiple methods to ensure it works
+      // bgMusic.volume = 0.5; // Set volume to 50%
+      // bgMusic.setAttribute('volume', '0.5');
+      
+      // // Wait a moment then play with volume check
+      // setTimeout(() => {
+      //   bgMusic.volume = 0.5; // Double-check volume setting
+      //   bgMusic.play().then(() => {
+      //     console.log("Music started successfully at volume:", bgMusic.volume);
+      //   }).catch(err => {
+      //     console.log("Audio play failed:", err);
+      //     // Try alternative method if first fails
+      //     const playPromise = bgMusic.play();
+      //     if (playPromise !== undefined) {
+      //       playPromise.then(() => {
+      //         bgMusic.volume = 0.5;
+      //       });
+      //     }
+      //   });
+      // }, 100);
+
+      
+      const button = document.querySelector('.surprise-button');
+      const giftsContainer = document.getElementById('giftsContainer');
+      
+      // Hide button with animation
+      button.style.transform = 'scale(0) rotate(360deg)';
+      button.style.opacity = '0';
+      
+      setTimeout(() => {
+        button.style.display = 'none';
+        giftsContainer.style.display = 'grid';
+        
+        // Create celebration
+        for (let i = 0; i < 20; i++) {
+          setTimeout(() => {
+            createEnhancedConfetti();
+            createFireworks();
+          }, i * 100);
+        }
+        
+        // Create music notes burst
+        for (let i = 0; i < 10; i++) {
+          setTimeout(() => createMusicNotes(), i * 200);
+        }
+      }, 500);
+    }
+
+    function openGift(giftNumber) {
+  if (!celebrationActive) return;
+  
+  if (giftNumber === 3) {
+    // Special handling for photo selection
+    showPhotoSelection();
+    return;
+  }
+  
+  const gift = giftMessages[giftNumber];
+  const modal = document.getElementById('giftModal');
+  const modalEmoji = document.getElementById('modalEmoji');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMessage = document.getElementById('modalMessage');
+  
+  // Update modal content
+  modalEmoji.textContent = gift.emoji;
+  modalTitle.textContent = gift.title;
+  modalMessage.innerHTML = gift.message;
+  
+  // Show modal
+  modal.style.display = 'block';
+  
+  // Create celebration effects
+  for (let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      createEnhancedConfetti();
+      createFireworks();
+    }, i * 100);
+  }
+  
+  // Create music notes burst
+  for (let i = 0; i < 3; i++) {
+    setTimeout(() => createMusicNotes(), i * 300);
+  }
+}
+
+const photoImages = {
+  1: 'Pics/Heart 2.png',  // Replace with actual image paths
+  2: 'Pics/Heart 3.png',
+  3: 'Pics/Heart 4.png',
+  4: 'Pics/Heart 5.png'
+};
+
+let clickedPhotos = [];
+
+function showPhotoSelection() {
+  const modal = document.getElementById('giftModal');
+  const modalEmoji = document.getElementById('modalEmoji');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMessage = document.getElementById('modalMessage');
+  
+  modalEmoji.textContent = '📸';
+  modalTitle.textContent = 'Choose Your Special Picture';
+  modalMessage.innerHTML = `
+    <div class="photo-selection-title">Click any heart to see your special picture!</div>
+    <div class="photo-selection-container">
+      <div class="photo-option" data-photo="1" onclick="showPhoto(1)"></div>
+      <div class="photo-option" data-photo="2" onclick="showPhoto(2)"></div>
+      <div class="photo-option" data-photo="3" onclick="showPhoto(3)"></div>
+      <div class="photo-option" data-photo="4" onclick="showPhoto(4)"></div>
+    </div>
+  `;
+  
+  modal.style.display = 'block';
+  
+  // Create celebration effects
+  for (let i = 0; i < 10; i++) {
+    setTimeout(() => {
+      createEnhancedConfetti();
+      createFireworks();
+    }, i * 100);
+  }
+}
+
+function showPhoto(photoNumber) {
+  if (clickedPhotos.includes(photoNumber)) return;
+  
+  clickedPhotos.push(photoNumber);
+  
+  const modal = document.getElementById('giftModal');
+  const modalEmoji = document.getElementById('modalEmoji');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalMessage = document.getElementById('modalMessage');
+  
+  // Mark this option as clicked
+  const clickedOption = document.querySelector(`[data-photo="${photoNumber}"]`);
+  clickedOption.classList.add('clicked');
+  clickedOption.onclick = null;
+  
+  modalEmoji.textContent = '💖';
+  // modalTitle.textContent = `Your Special Picture #${photoNumber}`;
+  modalMessage.innerHTML = `
+    <img src="${photoImages[photoNumber]}" alt="Special Picture ${photoNumber}" class="photo-display-image">
+  `;
+  
+  // Add special class for photo display
+  modal.classList.add('photo-display-modal');
+  
+  // Create celebration
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => createFireworks(), i * 200);
+  }
+}
+
+    function closeModal() {
+  const modal = document.getElementById('giftModal');
+  const modalContent = modal.querySelector('.modal-content');
+  
+  modalContent.style.animation = 'none';
+  modalContent.style.transform = 'translate(-50%, -50%) scale(0) rotate(360deg)';
+  modalContent.style.opacity = '0';
+  
+  setTimeout(() => {
+    modal.style.display = 'none';
+    modal.classList.remove('photo-display-modal');
+    modalContent.style.transform = 'translate(-50%, -50%) scale(1) rotate(0deg)';
+    modalContent.style.opacity = '1';
+    modalContent.style.animation = 'modalPop 0.5s ease-out';
+  }, 300);
+}
+
+    // Close modal when clicking outside
+    document.getElementById('giftModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Cleanup function to stop all animations
+    function stopAllAnimations() {
+      celebrationActive = false;
+      animationIntervals.forEach(interval => clearInterval(interval));
+      animationIntervals = [];
+    }
+
+    // Typing animation for the wish message
+function startTypingAnimation() {
+  const wishText = `Birthday Girl Kalaiarasii 💓,
+
+A very Happy Birthday to you my Girl. Happy happy happy aa iru ... Ipo iruka maariyae eppovum ... Thats the speciality of Kalaiarasiiii. One and only the best person in my life. Nee eppovum sandhosham aavae irukanum adhaan My aasai. 
+
+Aprm ellarum soldra maari, un aasai, latchiyam, pudichadhu ellam ae unaku amayanum. Nee ninaicha ellam nadakanum. Adhula edhaachu help nu theva patta naa iruken irupen. Ini varum varushangalayum sandhoshama eduthutu po. 
+
+Just an another year of friendship um namma continue pannuvom. Ippo dhaan 10yrs ... innum adhu oru 40 50 yrs nu pogatum, With your blessings. 
+
+And once again,  a big Happpyyyyy  birthday Kalaii 🫂. Idhu verum sample dhaan ... Scroll down 👇😂😍 
+
+Happy Birthday! 🎉💕`;
+
+  const typingElement = document.getElementById('typingWish');
+  const cursor = document.getElementById('cursor');
+  let i = 0;
+  
+  function typeWriter() {
+    if (i < wishText.length) {
+      if (wishText.charAt(i) === '\n') {
+        typingElement.innerHTML += '<br>';
+      } else {
+        typingElement.innerHTML += wishText.charAt(i);
+      }
+      i++;
+      setTimeout(typeWriter, 50); // Adjust speed here (lower = faster)
+    } else {
+      // Hide cursor when typing is complete
+      setTimeout(() => {
+        cursor.style.display = 'none';
+      }, 2000);
+    }
+  }
+  
+  // Start typing animation after image loads
+  setTimeout(typeWriter, 2500);
+}
+
+
+    // Cleanup when page is about to unload
+    window.addEventListener('beforeunload', stopAllAnimations);
+  </script>
+</body>
+</html>
+
